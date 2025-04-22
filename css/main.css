@@ -1,0 +1,68 @@
+/* Global styles */
+html, body {
+    font-family: 'Press Start 2P', sans-serif; /* Pixelated font for NES look */
+    background-color: #000000; /* Dark background for retro feel */
+    color: #fff; /* Light text for readability */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Container settings */
+#container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #111; /* Darker background for container */
+    border: 5px solid #fff; /* White border for NES box-like appearance */
+    border-radius: 10px;
+}
+
+/* Element spacing */
+#container > * {
+    margin: 1rem;
+}
+
+/* NES-style terminal */
+#terminal {
+    height: 360px;
+    padding: 1rem;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    border: 3px solid #fff; /* White border for NES console aesthetic */
+    font-size: 1rem; /* Suitable font size for readability */
+    font-family: 'Press Start 2P', sans-serif; /* Pixelated font */
+    color: #00ff00; /* Green text to resemble old-school CRT monitors */
+    overflow-y: auto;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    background-color: #333; /* Dark background for buttons */
+    color: #fff; /* White text */
+    border: 2px solid #fff; /* White border around button */
+    border-radius: 5px;
+    font-family: 'Press Start 2P', sans-serif;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #00ff00; /* Green hover effect */
+    color: #000; /* Black text on hover */
+}
+
+/* Links */
+a {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
