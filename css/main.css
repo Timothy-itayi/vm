@@ -1,245 +1,222 @@
 
-/* Modern Minimalist Styles */
+/* Minimalist Gray UI */
 :root {
-    --primary-bg: #ffffff;
-    --secondary-bg: #f8f9fa;
-    --accent-color: #007AFF;
-    --text-color: #2c3e50;
-    --border-color: #e9ecef;
-    --terminal-bg: #1a1a1a;
-    --terminal-text: #00ff9d;
+    --gray-50: #fafafa;
+    --gray-100: #f5f5f5;
+    --gray-200: #e5e5e5;
+    --gray-300: #d4d4d4;
+    --gray-400: #a3a3a3;
+    --gray-500: #737373;
+    --gray-600: #525252;
+    --gray-700: #404040;
+    --gray-800: #262626;
+    --gray-900: #171717;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: var(--primary-bg);
-    color: var(--text-color);
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--gray-100);
+    color: var(--gray-800);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
 #container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: var(--primary-bg);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Header */
+.hero {
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-content {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: var(--gray-600);
     margin-bottom: 1.5rem;
-    color: var(--text-color);
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background-color: var(--gray-200);
+    color: var(--gray-700);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Main Content */
+main {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.section {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid var(--gray-200);
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 1rem;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.125rem;
     font-weight: 600;
-    margin: 2rem 0 1rem;
-    color: var(--text-color);
+    color: var(--gray-700);
+    margin-bottom: 0.75rem;
 }
 
 p {
-    margin-bottom: 1.2rem;
-    color: var(--text-color);
-}
-
-#terminal {
-    height: 400px;
-    background-color: var(--terminal-bg);
-    border-radius: 8px;
-    padding: 1rem;
-    margin: 2rem 0;
-    font-family: 'SF Mono', 'Consolas', monospace;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-button {
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    margin-right: 1rem;
+    color: var(--gray-600);
+    font-size: 0.9375rem;
     margin-bottom: 1rem;
+}
+
+/* Terminal */
+.terminal-container {
+    background-color: var(--gray-900);
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0;
+    height: 360px;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    color: var(--gray-100);
+}
+
+/* Program Selector */
+.program-selector {
+    margin-top: 1rem;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+}
+
+.program-button {
+    background-color: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.2s ease;
+    text-align: left;
 }
 
-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
+.program-button:hover {
+    background-color: white;
+    border-color: var(--gray-300);
 }
 
-button:active {
-    transform: translateY(0);
+.program-name {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 0.25rem;
 }
 
-#programs {
-    background-color: var(--secondary-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin: 2rem 0;
+.program-desc {
+    font-size: 0.8125rem;
+    color: var(--gray-500);
 }
 
-#controls {
-    background-color: var(--secondary-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin: 2rem 0;
+/* Control Grid */
+.control-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
 }
 
-#more-information {
-    border-top: 1px solid var(--border-color);
-    margin-top: 2rem;
-    padding-top: 2rem;
+.control-card {
+    background-color: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 6px;
+    padding: 1rem;
 }
 
+/* Links */
 a {
-    color: var(--accent-color);
+    color: var(--gray-700);
     text-decoration: none;
-    transition: color 0.2s ease;
+    border-bottom: 1px solid var(--gray-300);
 }
 
 a:hover {
-    color: #005ac1;
-    text-decoration: underline;
-=======
-/* Basic styling for HTML and Body */
-html, body {
-    font-family: sans-serif;
-    background-color: #1b1b1b; /* Darker background for better contrast */
-    color: #fff; /* White text for better visibility */
-    padding: 0;
-    margin: 0;
-    height: 100%;
+    color: var(--gray-900);
+    border-bottom-color: var(--gray-600);
 }
 
-/* Container */
-#container {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 1rem;
-    overflow: auto; /* Allow scrolling if needed */
-}
-
-/* Margin for all children of container */
-#container > * {
-    margin: 1rem;
-}
-
-/* NES-like font for headings and key text */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-#intro h1, #programs h3, #controls h3, #more-information h3 {
-    font-family: 'Press Start 2P', cursive;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding shadow for a more retro feel */
-}
-
-/* Intro section */
-#intro h1 {
-    font-size: 2rem;
-    text-align: center;
-    letter-spacing: 2px; /* Slight spacing for retro aesthetic */
-    text-transform: uppercase; /* Bold, uppercase letters */
-}
-
-/* Terminal styling */
-#terminal {
-    height: 360px;
-    padding: 0.5rem;
-    background-color: #000; /* Darker terminal color */
-    border-radius: 10px;
-    border: 3px solid #444; /* Subtle border to add depth */
-    color: #0f0; /* Classic green text */
-    font-family: 'Courier New', Courier, monospace; /* Classic terminal font */
-    font-size: 1rem;
-    overflow-y: scroll;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3); /* Green glow effect */
-}
-
-/* Button styling */
-#programs button {
-    background-color: #ff00ff; /* Bright retro color */
-    border: 2px solid #fff;
-    padding: 12px 24px;
-    margin: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 8px;
-    font-family: 'Press Start 2P', cursive;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Slight button text shadow */
-    transition: all 0.2s ease-in-out; /* Smooth transition for hover effect */
-}
-
-#programs button:hover {
-    background-color: #ff00cc; /* Slightly darker on hover */
-    transform: scale(1.1); /* Grow button slightly on hover */
-}
-
-/* Controls section */
-#controls {
-    font-size: 0.9rem;
-    text-align: center;
-    color: #f0a500; /* Retro yellow color for text */
-}
-
-/* More information section */
-#more-information {
-    font-size: 0.9rem;
-    text-align: center;
-    color: #f0a500;
-}
-
-#more-information a {
-    color: #f0a500;
-    text-decoration: none;
-    border-bottom: 2px dashed #f0a500; /* Retro underlined effect */
-}
-
-#more-information a:hover {
-    text-decoration: none;
-    color: #ff00ff; /* Change color on hover for emphasis */
-}
-
-/* Responsive layout for smaller screens */
-@media (max-width: 600px) {
-    #container {
-        padding: 0.5rem;
+/* Responsive */
+@media (max-width: 640px) {
+    .hero {
+        padding: 2rem 1rem;
     }
 
-    #intro h1 {
-        font-size: 1.5rem;
-    }
-
-    #programs button {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-    }
-
-    #terminal {
-        height: 250px;
-    }
-
-}
-
-@media (max-width: 768px) {
-    #container {
-        margin: 1rem;
-        padding: 1rem;
-    }
-    
     h1 {
         font-size: 2rem;
     }
-    
-    button {
-        width: 100%;
-        margin-right: 0;
+
+    .section {
+        padding: 1.25rem;
     }
+
+    .control-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray-300);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-400);
 }
