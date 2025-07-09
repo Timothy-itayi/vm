@@ -1,4 +1,4 @@
-/* Modern Monochromatic Minimalist Styles */
+
 :root {
     --gray-50: #fafafa;
     --gray-100: #f4f4f5;
@@ -194,6 +194,126 @@ a {
 a:hover {
     color: var(--gray-900);
     border-bottom-color: var(--gray-700);
+
+    color: #005ac1;
+    text-decoration: underline;
+
+/* Basic styling for HTML and Body */
+html, body {
+    font-family: sans-serif;
+    background-color: #1b1b1b; /* Darker background for better contrast */
+    color: #fff; /* White text for better visibility */
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+/* Container */
+#container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 1rem;
+    overflow: auto; /* Allow scrolling if needed */
+}
+
+/* Margin for all children of container */
+#container > * {
+    margin: 1rem;
+}
+
+/* NES-like font for headings and key text */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+#intro h1, #programs h3, #controls h3, #more-information h3 {
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding shadow for a more retro feel */
+}
+
+/* Intro section */
+#intro h1 {
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 2px; /* Slight spacing for retro aesthetic */
+    text-transform: uppercase; /* Bold, uppercase letters */
+}
+
+/* Terminal styling */
+#terminal {
+    height: 360px;
+    padding: 0.5rem;
+    background-color: #000; /* Darker terminal color */
+    border-radius: 10px;
+    border: 3px solid #444; /* Subtle border to add depth */
+    color: #0f0; /* Classic green text */
+    font-family: 'Courier New', Courier, monospace; /* Classic terminal font */
+    font-size: 1rem;
+    overflow-y: scroll;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3); /* Green glow effect */
+}
+
+/* Button styling */
+#programs button {
+    background-color: #ff00ff; /* Bright retro color */
+    border: 2px solid #fff;
+    padding: 12px 24px;
+    margin: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Slight button text shadow */
+    transition: all 0.2s ease-in-out; /* Smooth transition for hover effect */
+}
+
+#programs button:hover {
+    background-color: #ff00cc; /* Slightly darker on hover */
+    transform: scale(1.1); /* Grow button slightly on hover */
+}
+
+/* Controls section */
+#controls {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #f0a500; /* Retro yellow color for text */
+}
+
+/* More information section */
+#more-information {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #f0a500;
+}
+
+#more-information a {
+    color: #f0a500;
+    text-decoration: none;
+    border-bottom: 2px dashed #f0a500; /* Retro underlined effect */
+}
+
+#more-information a:hover {
+    text-decoration: none;
+    color: #ff00ff; /* Change color on hover for emphasis */
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 600px) {
+    #container {
+        padding: 0.5rem;
+    }
+
+    #intro h1 {
+        font-size: 1.5rem;
+    }
+
+    #programs button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    #terminal {
+        height: 250px;
+    }
+
+
 }
 
 /* Responsive Design */
