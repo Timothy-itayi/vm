@@ -4,48 +4,86 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>LC-3 Virtual Machine in JavaScript</title>
+    <title>Virtual Machine Explorer | LC-3 Implementation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.10.1/xterm.min.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="container">
-        <div id="intro">
-            <h1>LC-3 Virtual Machine with JavaScript</h1>
-            <p>This is a JavaScript implementation of the LC-3 virtual machine, an educational computer architecture.</p>
-        </div>
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Virtual Machine Explorer</h1>
+                <p class="subtitle">An interactive LC-3 implementation inspired by learning computer architecture fundamentals</p>
+                <div class="tags">
+                    <span class="tag">Educational</span>
+                    <span class="tag">Computer Architecture</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+            </div>
+        </header>
 
-        <div id="programs">
-            <h3>Programs</h3>
-            <p>Although  is capable of running any valid LC-3 program, this demo includes :</p>
-            <p>
-                <button onclick="restartAndLoad(lc3_2048);">2048</button>
-                <button onclick="restartAndLoad(lc3_rogue);">Rogue</button>
-                <button onclick="restartAndLoad(lc3_calculator);">Calculator(Add, Sub, Mul)</button>
-            </p>
-        </div>
+        <main>
+            <section id="about" class="section">
+                <h2>About This Project</h2>
+                <p>
+                    This project emerged from my journey learning about virtual machines and computer architecture through 
+                    <a href="https://www.jmeiners.com/lc3-vm/">Justin Meiners and Ryan Pendleton's excellent tutorial</a>. 
+                    It demonstrates how a simple virtual machine can execute programs, showcasing fundamental concepts of 
+                    computer architecture in an interactive way.
+                </p>
+            </section>
 
-        <div id="terminal"></div>
+            <section id="demo" class="section">
+                <div class="demo-header">
+                    <h2>Interactive Demo</h2>
+                    <p>Experience the VM in action with these sample programs:</p>
+                </div>
+                
+                <div id="terminal" class="terminal-container"></div>
+                
+                <div class="program-selector">
+                    <div class="button-group">
+                        <button onclick="restartAndLoad(lc3_2048);" class="program-button">
+                            <span class="program-name">2048</span>
+                            <span class="program-desc">Classic sliding tile game</span>
+                        </button>
+                        <button onclick="restartAndLoad(lc3_rogue);" class="program-button">
+                            <span class="program-name">Rogue</span>
+                            <span class="program-desc">Text-based adventure</span>
+                        </button>
+                        <button onclick="restartAndLoad(lc3_calculator);" class="program-button">
+                            <span class="program-name">Calculator</span>
+                            <span class="program-desc">Basic arithmetic operations</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
 
-        <div id="controls">
-            <h3>Controls:</h3>
-            <p>Any keys that are pressed while the terminal is focused will be forwarded to the VM.</p>
-            <p>
-                On mobile (or devices with a touch screen), swiping on the terminal will simulate WASD key presses.
-                To send keys other than this, you can tap anywhere in the terminal to manually focus the terminal and open a keyboard.
-            </p>
-        </div>
+            <section id="controls" class="section">
+                <h2>Interaction Guide</h2>
+                <div class="control-grid">
+                    <div class="control-card">
+                        <h3>Desktop Usage</h3>
+                        <p>Use your keyboard to interact with the programs. All keystrokes are automatically forwarded to the virtual machine when the terminal is focused.</p>
+                    </div>
+                    <div class="control-card">
+                        <h3>Mobile Usage</h3>
+                        <p>Swipe gestures simulate WASD movement. Tap the terminal area to bring up the keyboard for additional input options.</p>
+                    </div>
+                </div>
+            </section>
 
-        <div id="more-information">
-            <h3>More Information</h3>
-            <p>
-                This project is inspired by the work of <a href="https://github.com/rpendleton">rpendleton</a> and based on a tutorial written by Justin Meiners and Ryan Pendleton.
-                If you're interested in writing your own VM (or just want to learn more about the project), you can 
-                <a href="https://www.jmeiners.com/lc3-vm/">find the tutorial here</a>.
-            </p>
-        </div>
-        
+            <section id="credits" class="section">
+                <h2>Acknowledgments</h2>
+                <p>
+                    Built upon the foundational work of <a href="https://github.com/rpendleton">rpendleton</a> and 
+                    implemented following the educational insights from the LC-3 VM tutorial. This project serves 
+                    as both a learning tool and a practical demonstration of virtual machine concepts.
+                </p>
+            </section>
+        </main>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.10.1/xterm.min.js"></script>
